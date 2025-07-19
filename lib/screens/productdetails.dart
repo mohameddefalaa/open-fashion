@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:open_fashion/components/customeAppBar.dart';
@@ -6,7 +5,6 @@ import 'package:open_fashion/components/customebutton.dart' show Customebutton;
 import 'package:open_fashion/components/headersandtexts.dart';
 import 'package:open_fashion/components/productcard.dart';
 import 'package:open_fashion/components/showtotal.dart';
-import 'package:open_fashion/core/themes/lightthemcolors.dart';
 import 'package:open_fashion/models/productmodel.dart';
 import 'package:open_fashion/screens/Placeorder.dart';
 
@@ -24,7 +22,7 @@ class _ProductdetailsState extends State<Productdetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomeAppBar(isblack: true),
+      appBar: CustomeAppBar(),
       body: Column(
         children: [
           Padding(
@@ -48,7 +46,7 @@ class _ProductdetailsState extends State<Productdetails> {
                   thickness: 1,
                 ),
                 ListTile(
-                  leading: svgIcon('assets/icons/Voucher.svg', true),
+                  leading: svgIcon('assets/icons/Voucher.svg'),
                   title: Text(
                     'Add promo code',
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
@@ -63,10 +61,7 @@ class _ProductdetailsState extends State<Productdetails> {
                 ),
 
                 ListTile(
-                  leading: svgIcon(
-                    'assets/icons/Door to Door Delivery.svg',
-                    true,
-                  ),
+                  leading: svgIcon('assets/icons/Door to Door Delivery.svg'),
                   title: Text(
                     'Delivery',
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(

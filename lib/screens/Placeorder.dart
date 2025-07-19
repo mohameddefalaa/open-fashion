@@ -78,7 +78,7 @@ class _PlaceorderState extends State<Placeorder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomeAppBar(isblack: true),
+      appBar: CustomeAppBar(),
       body: Column(
         children: [
           Padding(
@@ -132,7 +132,7 @@ class _PlaceorderState extends State<Placeorder> {
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
                             Gap(10),
-                            svgIcon('assets/icons/Down.svg', true),
+                            svgIcon('assets/icons/Down.svg'),
                           ],
                         ),
                       )
@@ -152,7 +152,7 @@ class _PlaceorderState extends State<Placeorder> {
                           title: 'Payment method',
                           context: context,
                           text: 'select payment method',
-                          widget: svgIcon('assets/icons/Down.svg', true),
+                          widget: svgIcon('assets/icons/Down.svg'),
                         ),
                       )
                     : Column(
@@ -170,10 +170,7 @@ class _PlaceorderState extends State<Placeorder> {
                                 onTap: () {
                                   editevisadata();
                                 },
-                                child: svgIcon(
-                                  'assets/icons/Forward.svg',
-                                  true,
-                                ),
+                                child: svgIcon('assets/icons/Forward.svg'),
                               ),
                             ],
                           ),
@@ -229,9 +226,7 @@ Widget selectorbuild({
     children: [
       Text(
         title == null ? '' : title,
-        style: Theme.of(
-          context,
-        ).textTheme.titleMedium!.copyWith(color: Color(0xff878787)),
+        style: Theme.of(context).textTheme.titleMedium!.copyWith(),
       ),
       Gap(5),
       Container(

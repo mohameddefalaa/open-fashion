@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:open_fashion/components/customeAppBar.dart';
 import 'package:open_fashion/components/customebutton.dart';
 import 'package:open_fashion/components/headersandtexts.dart';
+import 'package:open_fashion/cubit/appcubit.dart';
 
 class PaymentMethode extends StatefulWidget {
   const PaymentMethode({super.key, this.editedtae});
@@ -39,7 +40,7 @@ class _PaymentMethodeState extends State<PaymentMethode> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        appBar: CustomeAppBar(isblack: true),
+        appBar: CustomeAppBar(),
         body: GestureDetector(
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
@@ -52,9 +53,9 @@ class _PaymentMethodeState extends State<PaymentMethode> {
                     textStyle: GoogleFonts.tenorSans(
                       fontWeight: FontWeight.w400,
                       fontSize: 16,
-                      color: Colors.black,
+                      color: Appcubit.isdark ? Colors.white : Colors.grey,
                     ),
-                    cardBgColor: Colors.grey,
+                    cardBgColor: Appcubit.isdark ? Colors.grey : Colors.black,
                     cardNumber: cardNumber,
                     expiryDate: expiryDate,
                     cardHolderName: cardHolderName,
@@ -74,7 +75,7 @@ class _PaymentMethodeState extends State<PaymentMethode> {
                     onCreditCardModelChange: onCreditCardModelChange,
                     formKey: formkey,
                   ),
-                  Gap(MediaQuery.sizeOf(context).height * 0.1),
+                  Gap(MediaQuery.sizeOf(context).height * 0.095),
                   Customebutton(
                     text: 'Add Card',
                     ontap: () {

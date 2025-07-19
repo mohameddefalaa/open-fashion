@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart' show Gap;
 import 'package:open_fashion/components/customeAppBar.dart';
 import 'package:open_fashion/core/themes/lightthemcolors.dart';
+import 'package:open_fashion/cubit/appcubit.dart';
 
 import '../core/themes/darkthemecolors.dart' show DarkthemeAppcolors;
 
@@ -24,20 +26,29 @@ class Customebutton extends StatelessWidget {
 
         height: 55,
         width: double.infinity,
-        color: Lightthemcolors.sbbcolor,
+        color: Appcubit.isdark
+            ? Lightthemcolors.sbbcolor
+            : DarkthemeAppcolors.titleActive,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             isiconshow
-                ? svgIcon('assets/icons/shopping bag.svg', false)
+                ? SvgPicture.asset(
+                    'assets/icons/shopping bag.svg',
+                    color: Appcubit.isdark
+                        ? DarkthemeAppcolors.titleActive
+                        : Lightthemcolors.sbbcolor,
+                  )
                 : SizedBox.shrink(),
             Gap(10),
             Text(
               text,
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: DarkthemeAppcolors.titleActive,
                 fontSize: 16,
                 letterSpacing: 1,
+                color: Appcubit.isdark
+                    ? DarkthemeAppcolors.titleActive
+                    : Lightthemcolors.sbbcolor,
               ),
             ),
           ],

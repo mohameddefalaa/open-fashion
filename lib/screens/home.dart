@@ -6,6 +6,7 @@ import 'package:open_fashion/components/customeAppBar.dart';
 import 'package:open_fashion/components/dilog.dart';
 import 'package:open_fashion/core/themes/darkthemecolors.dart';
 import 'package:open_fashion/core/themes/lightthemcolors.dart';
+import 'package:open_fashion/cubit/appcubit.dart';
 import 'package:open_fashion/models/productmodel.dart';
 import 'package:open_fashion/screens/productdetails.dart';
 
@@ -42,8 +43,7 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      backgroundColor: DarkthemeAppcolors.titleActive,
-      appBar: CustomeAppBar(isblack: true),
+      appBar: CustomeAppBar(),
       body: Stack(
         children: [
           Positioned(
@@ -56,14 +56,24 @@ class _HomeState extends State<Home> {
             top: 40,
             left: 0,
             right: 0,
-            child: SvgPicture.asset('assets/images/October.svg'),
+            child: Appcubit.isdark
+                ? SvgPicture.asset('assets/images/October.svg')
+                : SvgPicture.asset(
+                    'assets/images/October.svg',
+                    color: Color.fromARGB(255, 99, 98, 98),
+                  ),
           ),
 
           Positioned(
             top: 85,
             left: 0,
             right: 0,
-            child: SvgPicture.asset('assets/images/Collection.svg'),
+            child: Appcubit.isdark
+                ? SvgPicture.asset('assets/images/Collection.svg')
+                : SvgPicture.asset(
+                    'assets/images/Collection.svg',
+                    color: Color.fromARGB(255, 99, 98, 98),
+                  ),
           ),
 
           SingleChildScrollView(
@@ -163,18 +173,21 @@ class _HomeState extends State<Home> {
                                   width: 165,
                                   height: 45,
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.white),
-                                    color: DarkthemeAppcolors.titleActive,
+                                    border: Border.all(
+                                      color: Appcubit.isdark
+                                          ? Colors.white
+                                          : Colors.black,
+                                    ),
+                                    color: Appcubit.isdark
+                                        ? DarkthemeAppcolors.titleActive
+                                        : Lightthemcolors.sbbcolor,
                                   ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      svgIcon(
-                                        'assets/icons/shopping bag.svg',
-                                        true,
-                                      ),
+                                      svgIcon('assets/icons/shopping bag.svg'),
                                       Gap(10),
                                       Text(
                                         'Order Now',

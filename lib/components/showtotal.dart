@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:open_fashion/cubit/appcubit.dart';
 import 'package:open_fashion/models/productmodel.dart';
 import 'package:open_fashion/screens/productdetails.dart';
 
@@ -14,7 +15,9 @@ class ShowTotal extends StatelessWidget {
         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
           fontSize: 14,
           letterSpacing: 3,
-          color: Color.fromARGB(255, 167, 163, 163),
+          color: Appcubit.isdark
+              ? Color.fromARGB(255, 167, 163, 163)
+              : Color(0xff333333),
         ),
       ),
       trailing: Text(

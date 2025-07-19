@@ -37,7 +37,7 @@ class _AddshippingState extends State<Addshipping> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomeAppBar(isblack: true),
+      appBar: CustomeAppBar(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Form(

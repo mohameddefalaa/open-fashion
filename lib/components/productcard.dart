@@ -74,11 +74,7 @@ class _ProductcardState extends State<Productcard> {
                           }
                         });
                       },
-                      icon: Icon(
-                        CupertinoIcons.minus_circle,
-                        color: Lightthemcolors.sbbcolor,
-                        size: 22,
-                      ),
+                      icon: Icon(CupertinoIcons.minus_circle, size: 22),
                     ),
                     Text(
                       count.toString(),
@@ -93,11 +89,7 @@ class _ProductcardState extends State<Productcard> {
                           widget.onchange(count);
                         });
                       },
-                      icon: Icon(
-                        CupertinoIcons.plus_circle,
-                        color: Lightthemcolors.sbbcolor,
-                        size: 22,
-                      ),
+                      icon: Icon(CupertinoIcons.plus_circle, size: 22),
                     ),
                   ],
                 ),
